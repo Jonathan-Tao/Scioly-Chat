@@ -29,10 +29,10 @@
         const input = document.getElementById('input');
       
         socket.on('chat message', function(thing) {
-            let item = document.createElement('li');
-            item.textContent = thing;
-            messages.appendChild(item);
-            window.scrollTo(0, document.body.scrollHeight);
+          let item = document.createElement('li');
+          item.textContent = thing;
+          messages.appendChild(item);
+          window.scrollTo(0, document.body.scrollHeight);
         });
     
       </script>
