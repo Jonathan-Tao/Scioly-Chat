@@ -15,10 +15,10 @@ io.on('connection', (socket) => {
 		io.emit('chat message', msg);
 	});
 	console.log('a user connected');
-	io.emit('a user connected');
+	io.emit('connected', 'a user connected');
 	socket.on('disconnect', () => {
-		console.log('user disconnected');
-		io.emit('a user disconnected');
+		io.emit('disconnected', 'a user disconnected');
+		console.log('a user disconnected');
 	});
 });
 
