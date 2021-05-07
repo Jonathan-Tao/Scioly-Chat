@@ -6,14 +6,14 @@ const { Server } = require('socket.io');
 const io = new Server(server);
 
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html');
+	res.sendFile(__dirname + '/index.html');
 });
 
+// eslint-disable-next-line no-unused-vars
 io.on('connection', (socket) => {
-    console.log('a user connect');
+	console.log('a user connect');
 });
 
 server.listen(3000, () => {
-    console.log('listening on *:3000')
+	console.log('listening on *:3000');
 });
-  
