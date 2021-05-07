@@ -18,6 +18,7 @@ io.on('connection', (socket) => {
 
 	console.log('a user connected');
 	io.emit('chat message', 'a user connected');
+	io.emit('chat message', 'please enter a nickname with the !nick command');
 
 	socket.on('disconnect', () => {
 		io.emit('chat message', 'a user disconnected');
