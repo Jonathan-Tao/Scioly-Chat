@@ -10,16 +10,20 @@ app.get('/', (req, res) => {
 });
 
 io.on('connection', (socket) => {
+
 	socket.on('chat message', (msg) => {
 		console.log('message: ' + msg);
 		io.emit('chat message', msg);
 	});
+
 	console.log('a user connected');
-	io.emit('connected', 'a user connected');
+	io.emit('chat message', 'a user connected');
+
 	socket.on('disconnect', () => {
-		io.emit('disconnected', 'a user disconnected');
+		io.emit('chat message', 'a user disconnected');
 		console.log('a user disconnected');
 	});
+
 });
 
 server.listen(3000, () => {
