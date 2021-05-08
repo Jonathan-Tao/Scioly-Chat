@@ -10,12 +10,10 @@ app.get('/', (req, res) => {
 });
 
 io.on('connection', (socket) => {
-
 	socket.on('chat message', (msg) => {
 		console.log('message: ' + msg);
 		io.emit('chat message', msg);
 	});
-
 	console.log('a user connected');
 	io.emit('chat message', 'a user connected');
 	io.emit('chat message', 'please enter a nickname with the !nick command');
