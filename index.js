@@ -33,6 +33,7 @@ io.on('connection', (socket) => {
 
 	// what is sent when a user joins
 	io.emit('chat message', 'a user connected');
+	io.emit('chat message', 'someone connected');
 });
 
 // defines which port it's listening on
